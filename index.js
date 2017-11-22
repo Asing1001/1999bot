@@ -11,7 +11,7 @@ bot.onEvent(async context => {
 });
 
 const server = createServer(bot);
-
-server.listen(5000, () => {
-  console.log('server is running on 5000 port...');
+const port = process.env.port || 5000
+server.listen(port, () => {
+  console.log(`server is running on ${port} port...`);
 });
