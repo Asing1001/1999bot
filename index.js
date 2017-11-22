@@ -20,7 +20,7 @@ const handler = new LineHandler()
 bot.onEvent(handler);
 
 const server = createServer(bot);
-const port = process.env.port || 5000
+const port = process.env.PORT || 5000
 server.listen(port, () => {
   console.log(`server is running on ${port} port...`);
 });
