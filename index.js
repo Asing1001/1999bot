@@ -2,8 +2,8 @@ const { LineBot, LineHandler } = require('bottender');
 const { createServer } = require('bottender/express');
 
 const bot = new LineBot({
-  channelSecret: 'd79a787909ac3b2fcfbd390bb8ad78e2',
-  accessToken: 'Vg7jICG1/NB84HjtYmKXeUoaQUA/YS5Ddd9n1Srcs+2pYLhFVtZS+3WVU1Ab9gZBZLYfc8THa/qTIv9ozUtuYtlwEvNgttEcByA0ABbIa8aLHKK56p+9Lvg/qBoq+ILe/noMW0DY9wWSvzvwYUAN4wdB04t89/1O/w1cDnyilFU=',
+  channelSecret: '5e67e6762bc5bbea44717dfa06d0ea25',
+  accessToken: 'xj7CqtkLmTlCsNhkO7N9Gt4dUa6loWCXXCXx7vgZ7u0cOcYG4o6bkJ5GoweiGUj7ZLYfc8THa/qTIv9ozUtuYtlwEvNgttEcByA0ABbIa8aD+VElEWDjdIdZphQdWg+pt0DQeIB0EX2TrdQXqWhPxAdB04t89/1O/w1cDnyilFU=',
 });
 
 const handler = new LineHandler()
