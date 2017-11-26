@@ -18,16 +18,19 @@ const handler = new LineHandler()
   .onEvent(async context => {
 
     const text = context.event.text //.split(' ')[1];
-    //const key = Object.keys(telData).find((tel, index) => tel.indexOf(text) !== -1)
-    //if (key)
-    //await context.sendText(telData[key]);
-    //else {
-    console.log(text)
-    const res = await fetch(`https://hsinchu-linebot.herokuapp.com/society/webcallback/${encodeURIComponent(text)}/`)
-    const suggestion = await res.text();
-    console.log(suggestion)
-    await context.sendText(suggestion);
-    //}
+    if (text.indexOf('/tel') !== -1) {
+      return
+    }
+    const key = Object.keys(telData).find((tel, index) => tel.indexOf(text) !== -1)
+    if (key)
+      await context.sendText(telData[key]);
+    else {
+      console.log(text)
+      const res = await fetch(`https://hsinchu-linebot.herokuapp.com/society/webcallback/${encodeURIComponent(text)}/`)
+      const suggestion = await res.text();
+      console.log(suggestion)
+      await context.sendText(suggestion);
+    }
   })
   .onError(async context => {
     console.log(JSON.stringify(context))
