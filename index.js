@@ -22,12 +22,15 @@ const handler = new LineHandler()
     //if (key)
     //await context.sendText(telData[key]);
     //else {
+    console.log(text)
     const res = await fetch(`https://hsinchu-linebot.herokuapp.com/society/webcallback/${text}/`)
     const suggestion = await res.text();
+    console.log(suggestion)
     await context.sendText(suggestion);
     //}
   })
   .onError(async context => {
+    console.log(JSON.stringify(context))
     await context.sendText('Something wrong happened.');
   });
 
