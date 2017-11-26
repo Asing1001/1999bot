@@ -1,6 +1,6 @@
 const { LineBot, LineHandler } = require('bottender');
 const { createServer } = require('bottender/express');
-const telData = require("telData");
+const telData = require("./tel.json");
 
 const bot = new LineBot({
   channelSecret: 'c1fdda62b3f4c9d26b1ae080ce92244d',
