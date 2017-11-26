@@ -12,12 +12,14 @@ const handler = new LineHandler()
     await context.sendText('Hi there!');
   })
   .onText(/tel/i, async context => {
-    const key = Object.keys(telData).find((tel,index)=> tel.indexOf(context.event.text.split(' ')[1])!==-1)
-    await context.sendText(telData[key]);
+
   })
   .onEvent(async context => {
-    
-    //await context.sendText("I don't know what you say.");
+
+    const text = context.event.text //.split(' ')[1];
+    const key = Object.keys(telData).find((tel, index) => tel.indexOf(text) !== -1)
+    if (key)
+      await context.sendText(telData[key]);
   })
   .onError(async context => {
     await context.sendText('Something wrong happened.');
