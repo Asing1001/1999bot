@@ -13,19 +13,20 @@ const handler = new LineHandler()
     await context.sendText('Hi there!');
   })
   .onText(/博物館/i, async context => {
-    
+
   })
   .onEvent(async context => {
 
     const text = context.event.text //.split(' ')[1];
-    const key = Object.keys(telData).find((tel, index) => tel.indexOf(text) !== -1)
-    if (key)
-      await context.sendText(telData[key]);
-    else {
-     const res = await fetch(`https://hsinchu-linebot.herokuapp.com/society/webcallback/${text}/`)
-     const suggestion = await res.text();
-     await context.sendText(suggestion);
-  }})
+    //const key = Object.keys(telData).find((tel, index) => tel.indexOf(text) !== -1)
+    //if (key)
+    //await context.sendText(telData[key]);
+    //else {
+    const res = await fetch(`https://hsinchu-linebot.herokuapp.com/society/webcallback/${text}/`)
+    const suggestion = await res.text();
+    await context.sendText(suggestion);
+    //}
+  })
   .onError(async context => {
     await context.sendText('Something wrong happened.');
   });
