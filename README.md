@@ -1,25 +1,10 @@
-# LINE hello world
+# 1999+
 
-## Install and Run
+後端api位置：https://double-a.herokuapp.com/
 
-Download this example or clone [bottender](https://github.com/Yoctol/bottender).
+## 使用資料集
 
-```
-curl https://codeload.github.com/Yoctol/bottender/tar.gz/master | tar -xz --strip=2 bottender-master/examples/line-hello-world
-cd line-hello-world
-npm install
-npm run dev
-```
+[新竹社會局問答集](http://society.hccg.gov.tw/society/ch/home.jsp?id=43&parentpath=0,5)
+[電話公開資料](http://opendata.hccg.gov.tw/dataset?tags=%E9%9B%BB%E8%A9%B1)
 
-## Idea of this example
 
-This example is a simple bot running on [LINE](https://line.me/). You have to
-get `channelSecret` and `accessToken` before running this bot.\
-For more information, check our [LINE guides](https://bottender.js.org/docs/Platforms-LINE).
-
-## Related examples
-
-* [line-builder](../line-builder)
-* [console-hello-world](../console-hello-world)
-* [slack-hello-world](../slack-hello-world)
-* [telegram-hello-world](../telegram-hello-world)
