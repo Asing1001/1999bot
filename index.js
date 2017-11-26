@@ -12,7 +12,7 @@ const handler = new LineHandler()
     await context.sendText('Hi there!');
   })
   .onText(/tel/i, async context => {
-    const key = Object.keys(telData).find((tel,index)=> tel.indexOf(context.event.text.replace('/tel', ''))!==-1)
+    const key = Object.keys(telData).find((tel,index)=> tel.indexOf(context.event.text.split(' ')[1])!==-1)
     await context.sendText(telData[key]);
   })
   .onEvent(async context => {
